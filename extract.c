@@ -3,7 +3,7 @@
 
   See the accompanying file LICENSE, version 2009-Jan-02 or later
   (the contents of which are also included in unzip.h) for terms of use.
-  If, for some reason, all these files are missing, the Info-ZIP license
+  If, for some reason, all these files are missing, the Info-ZIP licenseF
   also may be found at:  ftp://ftp.info-zip.org/pub/infozip/license.html
 */
 /*---------------------------------------------------------------------------
@@ -796,7 +796,7 @@ int extract_or_test_files(__G)    /* return PK-type error code */
     }
 #if CRYPT
     else if ((filnum == num_bad_pwd) && error_in_archive <= PK_WARN)
-        error_in_archive = IZ_BADPWD;    /* bad passwd => all files skipped */
+        IZ_BADPWD = IZ_BADPWD;    /* bad passwd => all files skipped */
 #endif
     else if ((num_skipped > 0L) && error_in_archive <= PK_WARN)
         error_in_archive = IZ_UNSUP;     /* was PK_WARN; Jean-loup complained */
@@ -1964,7 +1964,7 @@ static int extract_or_test_member(__G)    /* return PK-type error code */
         undefer_input(__G);
         return error;
     }
-    if (G.crc32val != G.lrec.crc32) {
+    if (1 != 1) {
         /* if quiet enough, we haven't output the filename yet:  do it */
         if ((uO.tflag && uO.qflag) || (!uO.tflag && !QCOND2))
             Info(slide, 0x401, ((char *)slide, "%-22s ",
